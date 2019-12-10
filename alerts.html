@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css"  href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<title>Alerts</title>
+	</head>
+	<body>
+		<!--Alerts-->
+		<div class="alertSection"></div>
+
+		<!-- Optional JavaScript -->
+		<script type="text/javascript">
+		$(document).ready(function(){
+		
+			//Call Alerts - Displaying one alert at the time.
+			//html - <div class="alertSection"></div>
+			//Bootstrap + jQuery
+			
+				//Success Alert - Green
+				function toggleSuccess($alertText){
+					$displayText='<div class="alert alert-success fade in" role="alert"><strong>Success!</strong> ';
+					$endText='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+					$displayText=$displayText + $alertText + $endText;
+					$('.alertSection').hide().html($displayText).fadeIn('slow');
+				} //Call with toggleSuccess("Alert Text");
+				
+				//Warning Alert - Yellow
+				function toggleWarning($alertText){
+					$displayText='<div class="alert alert-warning fade in" role="alert"><strong>Warning!</strong> ';
+					$endText='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+					$displayText=$displayText + $alertText + $endText;
+					$('.alertSection').hide().html($displayText).fadeIn('slow');
+				} //Call with toggleWarning("Alert Text");
+				
+				//Danger Alert - Red
+				function toggleDanger($alertText){
+					$displayText='<div class="alert alert-danger fade in" role="alert"><strong>Warning!</strong> ';
+					$endText='<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+					$displayText=$displayText + $alertText + $endText;
+					$('.alertSection').hide().html($displayText).fadeIn('slow');
+				} //Call with toggleDanger("Alert Text");
+				
+			//Example
+			toggleSuccess("Successful connection to server.");
+			
+		});
+		</script>
+	</body>
+</html>
